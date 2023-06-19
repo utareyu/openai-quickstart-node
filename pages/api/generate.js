@@ -31,7 +31,7 @@ export default async function (req, res) {
       prompt: generatePrompt(request),
       temperature: 0.6,
     });
-    console.log(completion[prompt]);
+    console.log(completion);
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch(error) {
     // Consider adjusting the error handling logic for your use case
@@ -51,9 +51,8 @@ export default async function (req, res) {
 
 function generatePrompt(request) {
   const capitalizedrequest = request[0];
-
-  return `Please answer the Cisco IOS commands that meet the following requests. 
-Use "copy run start" instead of "write memory".
+  return `Please include the mode in which you should execute the Cisco IOS commands that satisfy the following requirements.
+Use "copy run start" instead of "write memory"
 Please reply only with the command.
 : ${capitalizedrequest}`;
 }
