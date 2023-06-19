@@ -39,7 +39,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <img src="/dog.png" className={styles.icon} />
+        <img src="/router.png" className={styles.icon} />
         <h3>Generate text to Cisco IOS Command</h3>
         <form onSubmit={onSubmit}>
           <input
